@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "builds": [
+        {
+          "src": "package.json",
+          "use": "@vercel/static-build",
+          "config": { "distDir": "build" }
+        }
+      ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "https://repociclismo-i1wjwbxup-jimenas-projects-1f048bd7.vercel.app/"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/index.html"
+      }
+    ]
+  }
+  

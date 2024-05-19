@@ -1,13 +1,9 @@
 import { useRef } from "react";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import "./register.scss";
 
 export default function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
   const navigate = useNavigate();
 
   const emailRef = useRef();
@@ -22,7 +18,7 @@ export default function Register() {
     const enteredUsername = usernameRef.current.value;
   
     try {
-      await axios.post("http://localhost:8800/api/auth/register", {
+      await axios.post("/api/auth/register", {
         email: enteredEmail,
         username: enteredUsername,
         password: enteredPassword
@@ -73,7 +69,7 @@ export default function Register() {
             <b>Ya tengo una cuenta</b>
           </span>
           <small>
-            <a>Acerca de</a>.
+            <a href="/">Acerca de</a>.
           </small>
         </form>
       </div>

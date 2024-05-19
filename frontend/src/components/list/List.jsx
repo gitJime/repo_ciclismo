@@ -1,3 +1,4 @@
+// List.jsx
 import {
   ArrowBackIosOutlined,
   ArrowForwardIosOutlined,
@@ -9,7 +10,7 @@ import "./list.scss";
 export default function List({ list }) {
   const [isMoved, setIsMoved] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
-  const [clickLimit, setClickLimit] = useState(window.innerWidth / 230);
+  const [clickLimit] = useState(window.innerWidth / 230);
 
   const listRef = useRef();
 
@@ -25,6 +26,7 @@ export default function List({ list }) {
       listRef.current.style.transform = `translateX(${-230 + distance}px)`;
     }
   };
+
   return (
     <div className="list">
       <span className="listTitle">{list.title}</span>
@@ -36,7 +38,7 @@ export default function List({ list }) {
         />
         <div className="container" ref={listRef}>
           {list.content.map((item, i) => (
-            <ListItem index={i} item={item} />
+            <ListItem key={i} item={item} />
           ))}
         </div>
         <ArrowForwardIosOutlined

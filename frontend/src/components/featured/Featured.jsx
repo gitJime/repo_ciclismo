@@ -1,4 +1,4 @@
-import { InfoOutlined, PlayArrow } from "@material-ui/icons";
+import { InfoOutlined } from "@material-ui/icons";
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import axios from "axios";
 import { useEffect, useState } from "react";

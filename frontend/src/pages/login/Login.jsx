@@ -1,5 +1,4 @@
-
-import { useContext, useState } from "react";
+import { useContext, useState} from "react";
 import { login } from "../../authContext/apiCalls";
 import { AuthContext } from "../../authContext/AuthContext";
 import "./login.scss";
@@ -42,7 +41,6 @@ export default function Login() {
             <b>Registrate ahora.</b>
           </span>
           <small>
-            
             <b>Aceca de</b>.
           </small>
         </form>

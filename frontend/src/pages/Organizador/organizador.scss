@@ -1,0 +1,16 @@
+.organizador {
+    margin-bottom: 20px;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .card {
+    flex: 1;
+    margin: 10px;
+  }
+  

@@ -4,8 +4,12 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
-const movieRoute = require("./routes/movies");
-const listRoute = require("./routes/lists");
+const categoriasRouter = require('./routes/categorias');
+const ciclistasRouter = require('./routes/ciclista');
+const eventoRouter = require('./routes/eventos');
+const juezRouter = require('./routes/juez');
+const organizadorRouter = require('./routes/organizador');
+const rutaRouter = require('./routes/rutas');
 const cors = require("cors");
 
 dotenv.config();
@@ -26,9 +30,13 @@ app.use(express.json());
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
-app.use("/api/movies", movieRoute);
-app.use("/api/lists", listRoute);
+app.use('/api/categoria', categoriasRouter);
+app.use('/api/ciclista', ciclistasRouter);
+app.use('/api/juez', juezRouter);
+app.use('/api/evento', eventoRouter);
+app.use('/api/organizador', organizadorRouter);
+app.use('/api/ruta', rutaRouter);
 
-
-
-module.exports = app; 
+app.listen(8800, () => {
+  console.log("Backend server is running!");
+});

@@ -1,16 +1,44 @@
-@import "../../app.scss";
+// Definición del mixin para dispositivos móviles
+@mixin mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
 
 .navbar {
   width: 100%;
   color: rgb(255, 255, 255);
-  font-size: 14px;
+  font-size: 16px; // Incrementar el tamaño de la fuente base
   position: fixed;
   top: 0;
   z-index: 999;
-  background: linear-gradient(to top, transparent 2%, rgba(6, 6, 7, 0.186) 50%);
+  background: linear-gradient(to top, transparent 2%, rgba(6, 6, 7, 0.186) 1%);
 
   &.scrolled {
     background-color: var(--main-color);
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 10px;
+    cursor: pointer;
+
+
+    &.more {
+      background-color: gray;
+      color: white;
+    }
+
+    span {
+      margin-left: 5px;
+    }
   }
 
   .container {
@@ -33,16 +61,19 @@
         }
       }
 
+      
+
       span {
         margin-right: 20px;
         cursor: pointer;
+        font-size: 18px; // Incrementar el tamaño de la fuente de los spans
 
-        @include tablet {
+        @include mobile {
           display: none;
         }
 
         &.navbarmainLinks {
-          @include tablet {
+          @include mobile {
             display: block;
           }
         }
@@ -56,6 +87,11 @@
       .icon {
         margin: 0px 15px;
         cursor: pointer;
+        font-size: 20px; // Incrementar el tamaño de los íconos
+
+        @include mobile {
+          font-size: 24px; // Tamaño de icono móvil
+        }
       }
 
       img {
@@ -76,6 +112,11 @@
         span {
           padding: 10px;
           cursor: pointer;
+          font-size: 18px; // Incrementar el tamaño de la fuente de los spans en el perfil
+
+          @include mobile {
+            font-size: 20px; // Tamaño de fuente móvil
+          }
         }
 
         &:hover {
@@ -97,4 +138,6 @@
 .link {
   color: inherit;
   text-decoration: none;
+  font-size: 18px; // Incrementar el tamaño de la fuente de los enlaces
 }
+
